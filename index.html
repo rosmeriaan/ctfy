@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="CTFY - Temukan asset terbaik untuk video editing, motion graphic, dan konten kreator.">
+    <meta name="description" content="CTFY - Temukan asset terbaik untuk video editing, motion graphic, dan konten kreator. Ribuan preset, template, dan efek visual.">
     <meta name="theme-color" content="#6366f1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     
+    <!-- SEO -->
     <meta property="og:title" content="CTFY | Asset untuk Kreator Konten">
-    <meta property="og:description" content="Temukan asset terbaik untuk edit video, motion graphic, dan konten kreator.">
+    <meta property="og:description" content="Temukan asset terbaik untuk edit video, motion graphic, dan konten kreator. Update setiap minggu.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://ctfy.my.id/og-image.png">
+    <meta property="og:url" content="https://ctfy.my.id">
+    <meta property="og:site_name" content="CTFY">
+    <meta property="og:locale" content="id_ID">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="canonical" href="https://ctfy.my.id">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>">
     
@@ -60,7 +66,6 @@
             line-height: 1.5;
         }
         
-        /* Container System - Consistent */
         .container {
             max-width: var(--container);
             margin: 0 auto;
@@ -121,7 +126,7 @@
             color: var(--primary);
         }
         
-        /* Hero - Compact */
+        /* Hero */
         .hero {
             text-align: center;
             padding: var(--spacing-xl) 0 var(--spacing-lg);
@@ -144,7 +149,7 @@
             margin: 0 auto;
         }
         
-        /* Unified Search Panel */
+        /* Search Panel */
         .search-panel {
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -203,13 +208,7 @@
             color: white;
         }
         
-        .fav-chip {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        
-        /* Stats Bar - Compact */
+        /* Stats */
         .stats-bar {
             display: flex;
             gap: var(--spacing-md);
@@ -231,7 +230,7 @@
             font-weight: 600;
         }
         
-        /* Featured Section - Only ONE */
+        /* Featured Section */
         .featured-section {
             margin-bottom: var(--spacing-lg);
         }
@@ -262,7 +261,7 @@
             cursor: pointer;
         }
         
-        /* Horizontal Scroll */
+        /* Scroll Container */
         .scroll-container {
             overflow-x: auto;
             scrollbar-width: thin;
@@ -292,11 +291,23 @@
         
         .featured-image {
             height: 130px;
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            overflow: hidden;
+            background: var(--bg-hover);
+        }
+        
+        .featured-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .featured-image .placeholder {
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.5rem;
+            height: 100%;
+            font-size: 2rem;
+            color: var(--text-secondary);
         }
         
         .featured-info {
@@ -319,7 +330,7 @@
             gap: 8px;
         }
         
-        /* Main Grid */
+        /* Grid */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -343,12 +354,29 @@
         
         .card-image {
             height: 160px;
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            overflow: hidden;
+            background: var(--bg-hover);
+            position: relative;
+        }
+        
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .card:hover .card-image img {
+            transform: scale(1.03);
+        }
+        
+        .card-image .placeholder {
             display: flex;
             align-items: center;
             justify-content: center;
+            height: 100%;
             font-size: 2.5rem;
-            position: relative;
+            color: var(--text-secondary);
         }
         
         .card-badge {
@@ -421,6 +449,23 @@
             color: var(--text-secondary);
         }
         
+        /* Shimmer Skeleton */
+        .shimmer {
+            background: linear-gradient(90deg, 
+                var(--bg-hover) 25%, 
+                var(--border) 50%, 
+                var(--bg-hover) 75%
+            );
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+            border-radius: 16px;
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        
         /* Empty State */
         .empty-state {
             text-align: center;
@@ -469,14 +514,26 @@
         }
         
         .modal-preview {
-            height: 160px;
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            height: 200px;
             border-radius: 12px;
+            overflow: hidden;
+            background: var(--bg-hover);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .modal-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .modal-preview .placeholder {
             display: flex;
             align-items: center;
             justify-content: center;
+            height: 100%;
             font-size: 3rem;
-            margin-bottom: var(--spacing-md);
+            color: var(--text-secondary);
         }
         
         .modal-detail-row {
@@ -517,6 +574,7 @@
             cursor: pointer;
             text-align: center;
             font-size: 0.8rem;
+            color: var(--text);
         }
         
         /* Footer */
@@ -526,6 +584,24 @@
             border-top: 1px solid var(--border);
             color: var(--text-secondary);
             font-size: 0.75rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-sm);
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
         }
         
         .social-links {
@@ -565,14 +641,6 @@
             to { opacity: 1; transform: translateX(-50%) translateY(0); }
         }
         
-        /* Skeleton */
-        .skeleton {
-            height: 280px;
-            background: var(--bg-card);
-            border-radius: 16px;
-            border: 1px solid var(--border);
-        }
-        
         /* Responsive */
         @media (max-width: 768px) {
             :root {
@@ -594,7 +662,6 @@
             .grid { grid-template-columns: repeat(2, 1fr); }
         }
         
-        /* Accessibility */
         button:focus-visible, a:focus-visible {
             outline: 2px solid var(--primary);
             outline-offset: 2px;
@@ -602,6 +669,16 @@
         
         @media (prefers-reduced-motion: reduce) {
             * { animation: none !important; transition: none !important; }
+        }
+        
+        /* Lazy loading blur */
+        .image-loading {
+            filter: blur(8px);
+            transition: filter 0.3s;
+        }
+        
+        .image-loaded {
+            filter: blur(0);
         }
     </style>
 </head>
@@ -624,13 +701,13 @@
 
 <main>
     <div class="container">
-        <!-- Hero - Compact -->
+        <!-- Hero -->
         <div class="hero">
             <h1>Temukan asset terbaik<br>untuk kontenmu</h1>
             <p>Ribuan preset, template, dan efek visual untuk editor video, motion designer, dan kreator konten.</p>
         </div>
         
-        <!-- Unified Search Panel -->
+        <!-- Search Panel -->
         <div class="search-panel">
             <i class="fas fa-search search-icon"></i>
             <input type="text" id="searchInput" class="search-input" placeholder="Cari asset... Contoh: transition, intro gaming, logo reveal">
@@ -644,17 +721,17 @@
             </div>
         </div>
         
-        <!-- Stats Bar -->
+        <!-- Stats -->
         <div class="stats-bar">
             <div class="stat-item"><i class="fas fa-layer-group"></i> <span id="statAssets">0</span> asset</div>
             <div class="stat-item"><i class="fas fa-tag"></i> <span id="statCategories">0</span> kategori</div>
             <div class="stat-item"><i class="fas fa-eye"></i> <span id="statViews">0</span> total views</div>
         </div>
         
-        <!-- Featured Section - ONLY ONE (Trending) -->
+        <!-- Featured Section -->
         <div class="featured-section" id="featuredSection">
             <div class="section-header">
-                <div class="section-title"><i class="fas fa-fire"></i> Trending Minggu Ini</div>
+                <div class="section-title"><i class="fas fa-fire"></i> Populer Untukmu</div>
                 <span class="section-link" id="refreshTrending"><i class="fas fa-sync-alt"></i> Refresh</span>
             </div>
             <div class="scroll-container">
@@ -673,12 +750,17 @@
 
 <footer class="footer">
     <div class="social-links">
-        <a href="https://tiktok.com/@ctfy" target="_blank" class="social-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-        <a href="https://instagram.com/ctfy" target="_blank" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://youtube.com/@ctfy" target="_blank" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://tiktok.com/@ctfy" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        <a href="https://instagram.com/ctfy" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/@ctfy" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
     </div>
-    <div><a href="mailto:myxrin2748@gmail.com" style="color: var(--primary); text-decoration: none;">myxrin2748@gmail.com</a></div>
-    <div style="margin-top: 12px;">&copy; 2026 CTFY — Asset untuk kreator</div>
+    <div class="footer-links">
+        <a href="#">Tentang</a>
+        <a href="#">Privasi</a>
+        <a href="#">Kontak</a>
+        <a href="mailto:myxrin2748@gmail.com">myxrin2748@gmail.com</a>
+    </div>
+    <div>&copy; 2026 CTFY — Asset untuk kreator</div>
 </footer>
 
 <div id="modal" class="modal">
@@ -701,18 +783,29 @@
 <script>
     // ==================== CONFIG ====================
     const API_URL = 'https://script.google.com/macros/s/AKfycbxGBXI-W9rj6PzpeoSf_84HBq4CQnXwD9CoynIoRIfD9RWWyfArU7qf9R8yl4DTOchs/exec';
-    const CACHE_KEY = 'ctfy_v81_data';
+    const CACHE_KEY = 'ctfy_v82_data';
     const FAVORITES_KEY = 'ctfy_favorites';
     const VIEWS_KEY = 'ctfy_views';
     
     let allItems = [], favorites = new Set(), currentItem = null;
     let currentFilter = 'all';
     let fuseInstance = null;
+    let searchTimer = null;
+    let isLoading = false;
     
     // ==================== HELPERS ====================
     function escapeHTML(str) { if(!str) return ''; return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
     function isProItem(item) { return (item.Kategori || '').toLowerCase().includes('pro') || (item.Nama || '').toLowerCase().includes('pro'); }
-    function isNewItem(dateStr) { if(!dateStr) return false; const d = new Date(dateStr); const weekAgo = new Date(); weekAgo.setDate(weekAgo.getDate() - 7); return d > weekAgo; }
+    function isNewItem(dateStr) { 
+        if(!dateStr) return false; 
+        try {
+            let d = new Date(dateStr);
+            if(isNaN(d.getTime())) return false;
+            const weekAgo = new Date(); 
+            weekAgo.setDate(weekAgo.getDate() - 7); 
+            return d > weekAgo;
+        } catch(e) { return false; }
+    }
     function getViews(id) { let v = JSON.parse(localStorage.getItem(VIEWS_KEY) || '{}'); return v[id] || 0; }
     function recordView(id) { let v = JSON.parse(localStorage.getItem(VIEWS_KEY) || '{}'); v[id] = (v[id] || 0) + 1; localStorage.setItem(VIEWS_KEY, JSON.stringify(v)); updateStats(); }
     function showToast(msg) { const t = document.querySelector('.toast'); if(t) t.remove(); const toast = document.createElement('div'); toast.className = 'toast'; toast.innerHTML = msg; document.body.appendChild(toast); setTimeout(() => toast.remove(), 2500); }
@@ -736,6 +829,14 @@
         if(nama.includes('gaming')) tags.push('gaming');
         if(nama.includes('velocity')) tags.push('velocity');
         return [...new Set(tags)].slice(0, 4);
+    }
+    
+    // ==================== IMAGE HELPER ====================
+    function getImageHTML(url, alt, className = '') {
+        if(!url || url === '#' || url.trim() === '') {
+            return `<div class="placeholder${className ? ' ' + className : ''}">📦</div>`;
+        }
+        return `<img src="${escapeHTML(url)}" alt="${escapeHTML(alt || 'Asset')}" loading="lazy" class="${className}" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\\'placeholder\\'>📦</div>'">`;
     }
     
     // ==================== FAVORITES ====================
@@ -766,7 +867,9 @@
         if(trending.every(i => getViews(i.Kode) === 0)) trending = [...allItems].slice(0, 8);
         document.getElementById('trendingRow').innerHTML = trending.map(item => `
             <div class="featured-card" onclick="openModalByCode('${escapeHTML(item.Kode)}')">
-                <div class="featured-image">${item.Thumbnail ? '🎬' : '📦'}</div>
+                <div class="featured-image">
+                    ${item.Thumbnail ? `<img src="${escapeHTML(item.Thumbnail)}" alt="${escapeHTML(item.Nama)}" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\\'placeholder\\'>🎬</div>'">` : '<div class="placeholder">🎬</div>'}
+                </div>
                 <div class="featured-info">
                     <div class="featured-title">${escapeHTML(item.Nama || 'Untitled')}</div>
                     <div class="featured-meta"><span>👁️ ${getViews(item.Kode)}</span><span>${isProItem(item) ? 'Pro' : 'Gratis'}</span></div>
@@ -784,7 +887,7 @@
         grid.innerHTML = items.map(item => `
             <div class="card" onclick="openModalByCode('${escapeHTML(item.Kode)}')">
                 <div class="card-image">
-                    ${item.Thumbnail ? '<div style="font-size:2.5rem;">🎬</div>' : '<div style="font-size:2.5rem;">📦</div>'}
+                    ${item.Thumbnail ? `<img src="${escapeHTML(item.Thumbnail)}" alt="${escapeHTML(item.Nama)}" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\\'placeholder\\'>📦</div>'">` : '<div class="placeholder">📦</div>'}
                     <div class="card-badge">${isProItem(item) ? '⭐ Pro' : '🎁 Gratis'}</div>
                 </div>
                 <div class="card-content">
@@ -850,10 +953,20 @@
     
     // ==================== MODAL ====================
     function openModal(item) {
+        if(!item) return;
         currentItem = item;
         recordView(item.Kode);
+        
         document.getElementById('modalTitle').innerText = item.Nama || 'Detail Asset';
-        document.getElementById('modalPreview').innerHTML = item.Thumbnail ? '🎬' : '📦';
+        
+        // Preview with thumbnail
+        const previewEl = document.getElementById('modalPreview');
+        if(item.Thumbnail && item.Thumbnail !== '#') {
+            previewEl.innerHTML = `<img src="${escapeHTML(item.Thumbnail)}" alt="${escapeHTML(item.Nama)}" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\\'placeholder\\'>🎬</div>'">`;
+        } else {
+            previewEl.innerHTML = '<div class="placeholder">🎬</div>';
+        }
+        
         document.getElementById('modalTags').innerHTML = getTags(item).map(t => `<span class="tag">#${t}</span>`).join('');
         document.getElementById('modalDetails').innerHTML = `
             <div class="modal-detail-row"><span>Kategori</span><span>${escapeHTML(item.Kategori || 'Umum')}</span></div>
@@ -862,69 +975,191 @@
             <div class="modal-detail-row"><span>Views</span><span>${getViews(item.Kode)} kali</span></div>
             <div class="modal-detail-row"><span>Update</span><span>${item.DateAdded ? new Date(item.DateAdded).toLocaleDateString('id') : '-'}</span></div>
         `;
+        
         let links = [];
         if(item.Link5MB && item.Link5MB !== '#') links.push({ label: '📦 Download 5MB', url: item.Link5MB });
         if(item.LinkDrive && item.LinkDrive !== '#') links.push({ label: '📁 Download Drive', url: item.LinkDrive });
         if(item.LinkAsset && item.LinkAsset !== '#') links.push({ label: '📎 Link Asset', url: item.LinkAsset });
-        document.getElementById('modalLinks').innerHTML = links.length ? links.map(l => `<a href="${l.url}" target="_blank" class="modal-link">${l.label}</a>`).join('') : '<div style="text-align:center;padding:20px;">Link akan segera tersedia</div>';
+        document.getElementById('modalLinks').innerHTML = links.length ? 
+            links.map(l => `<a href="${l.url}" target="_blank" rel="noopener noreferrer" class="modal-link">${l.label}</a>`).join('') : 
+            '<div style="text-align:center;padding:20px;">Link akan segera tersedia</div>';
+        
         document.getElementById('modal').style.display = 'flex';
         document.body.style.overflow = 'hidden';
-        let url = new URL(window.location); url.searchParams.set('code', item.Kode); window.history.pushState({}, '', url);
+        
+        // Use replaceState to avoid history spam
+        let url = new URL(window.location);
+        url.searchParams.set('code', item.Kode);
+        window.history.replaceState({}, '', url);
+        
         renderFeatured();
     }
     
-    function openModalByCode(code) { let item = allItems.find(i => i.Kode === code); if(item) openModal(item); }
-    function closeModal() { document.getElementById('modal').style.display = 'none'; document.body.style.overflow = ''; let url = new URL(window.location); url.searchParams.delete('code'); window.history.pushState({}, '', url); }
-    function copyAssetLink() { if(currentItem) { navigator.clipboard.writeText(`${window.location.origin}${window.location.pathname}?code=${currentItem.Kode}`); showToast('Link disalin!'); } }
-    function shareAsset() { if(currentItem && navigator.share) navigator.share({ title: currentItem.Nama, url: `${window.location.origin}${window.location.pathname}?code=${currentItem.Kode}` }).catch(() => copyAssetLink()); else copyAssetLink(); }
+    function openModalByCode(code) { 
+        if(!code || !allItems.length) return;
+        let item = allItems.find(i => String(i.Kode).toLowerCase() === String(code).toLowerCase()); 
+        if(item) openModal(item); 
+        else showToast('Asset tidak ditemukan');
+    }
+    
+    function openAssetFromURL() {
+        const params = new URLSearchParams(window.location.search);
+        const code = params.get('code');
+        if(code && allItems.length) {
+            setTimeout(() => openModalByCode(code), 100);
+        }
+    }
+    
+    function closeModal() { 
+        document.getElementById('modal').style.display = 'none'; 
+        document.body.style.overflow = ''; 
+        let url = new URL(window.location);
+        url.searchParams.delete('code');
+        window.history.replaceState({}, '', url);
+    }
+    
+    function copyAssetLink() { 
+        if(currentItem) { 
+            let url = `${window.location.origin}${window.location.pathname}?code=${currentItem.Kode}`;
+            navigator.clipboard.writeText(url).then(() => showToast('Link disalin!')).catch(() => {});
+        } 
+    }
+    
+    function shareAsset() { 
+        if(currentItem && navigator.share) {
+            navigator.share({ 
+                title: currentItem.Nama, 
+                url: `${window.location.origin}${window.location.pathname}?code=${currentItem.Kode}` 
+            }).catch(() => copyAssetLink()); 
+        } else copyAssetLink(); 
+    }
     
     // ==================== LOAD DATA ====================
+    function showSkeleton() {
+        const grid = document.getElementById('cardGrid');
+        let skeletons = '';
+        for(let i = 0; i < 8; i++) {
+            skeletons += `<div class="shimmer" style="height:280px;"></div>`;
+        }
+        grid.innerHTML = skeletons;
+    }
+    
     async function loadData() {
-        document.getElementById('cardGrid').innerHTML = '<div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>';
+        if(isLoading) return;
+        isLoading = true;
+        showSkeleton();
+        
         const cached = localStorage.getItem(CACHE_KEY);
         if(cached) {
             try {
                 let { data, timestamp } = JSON.parse(cached);
                 if(Date.now() - timestamp < 30 * 60 * 1000) {
-                    allItems = data; initFuse(); renderAll(); return;
+                    allItems = data;
+                    initFuse();
+                    renderAll();
+                    openAssetFromURL();
+                    isLoading = false;
+                    return;
                 }
             } catch(e) {}
         }
+        
         try {
-            let res = await fetch(API_URL);
+            let controller = new AbortController();
+            let timeoutId = setTimeout(() => controller.abort(), 10000);
+            let res = await fetch(API_URL, { signal: controller.signal });
+            clearTimeout(timeoutId);
             let raw = await res.json();
             allItems = Array.isArray(raw) ? raw.filter(i => i && typeof i === 'object').reverse() : [];
             localStorage.setItem(CACHE_KEY, JSON.stringify({ data: allItems, timestamp: Date.now() }));
-            initFuse(); renderAll(); showToast(`${allItems.length} asset dimuat`);
-        } catch(err) { document.getElementById('cardGrid').innerHTML = `<div class="empty-state"><i class="fas fa-wifi"></i><h3>Gagal memuat data</h3><button class="chip" onclick="loadData()">Coba lagi</button></div>`; }
+            initFuse();
+            renderAll();
+            openAssetFromURL();
+            showToast(`${allItems.length} asset dimuat`);
+        } catch(err) {
+            document.getElementById('cardGrid').innerHTML = `<div class="empty-state"><i class="fas fa-wifi"></i><h3>Gagal memuat data</h3><p>Periksa koneksi internetmu</p><button class="chip" onclick="loadData()">Coba lagi</button></div>`;
+        }
+        isLoading = false;
     }
     
-    // ==================== INIT ====================
+    // ==================== THEME ====================
     function initTheme() {
         let saved = localStorage.getItem('ctfy_theme') || 'dark';
-        if(saved === 'light') document.documentElement.setAttribute('data-theme', 'light');
+        let icon = document.getElementById('themeToggle').querySelector('i');
+        if(saved === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+            icon.className = 'fas fa-sun';
+        } else {
+            icon.className = 'fas fa-moon';
+        }
         document.getElementById('themeToggle').addEventListener('click', () => {
             let cur = document.documentElement.getAttribute('data-theme');
-            if(cur === 'light') { document.documentElement.removeAttribute('data-theme'); localStorage.setItem('ctfy_theme', 'dark'); }
-            else { document.documentElement.setAttribute('data-theme', 'light'); localStorage.setItem('ctfy_theme', 'light'); }
+            let icon = document.getElementById('themeToggle').querySelector('i');
+            if(cur === 'light') {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('ctfy_theme', 'dark');
+                icon.className = 'fas fa-moon';
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('ctfy_theme', 'light');
+                icon.className = 'fas fa-sun';
+            }
         });
     }
     
+    // ==================== INIT EVENTS ====================
     function initEvents() {
-        document.getElementById('searchInput').addEventListener('input', () => applyFilters());
-        document.getElementById('resetFiltersBtn').addEventListener('click', resetFilters);
-        document.getElementById('refreshTrending').addEventListener('click', () => { renderFeatured(); showToast('Trending diperbarui'); });
-        document.getElementById('showFavOnlyBtn').addEventListener('click', () => { currentFilter = currentFilter === 'fav' ? 'all' : 'fav'; applyFilters(); });
-        document.getElementById('favFilterChip').addEventListener('click', () => { currentFilter = currentFilter === 'fav' ? 'all' : 'fav'; applyFilters(); });
+        const searchInput = document.getElementById('searchInput');
+        const resetBtn = document.getElementById('resetFiltersBtn');
+        const refreshBtn = document.getElementById('refreshTrending');
+        const favChip = document.getElementById('favFilterChip');
+        const showFavBtn = document.getElementById('showFavOnlyBtn');
         
-        document.querySelectorAll('.chip[data-filter]').forEach(chip => {
-            chip.addEventListener('click', () => { currentFilter = chip.dataset.filter; applyFilters(); });
+        // Debounced search
+        searchInput.addEventListener('input', () => {
+            clearTimeout(searchTimer);
+            searchTimer = setTimeout(() => applyFilters(), 250);
         });
         
-        window.addEventListener('popstate', () => { let params = new URLSearchParams(window.location.search); let code = params.get('code'); if(code) openModalByCode(code); else closeModal(); });
-        document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeModal(); });
+        resetBtn.addEventListener('click', resetFilters);
+        refreshBtn.addEventListener('click', () => { renderFeatured(); showToast('Populer diperbarui'); });
+        
+        // Favorites toggle
+        function toggleFavFilter() {
+            currentFilter = currentFilter === 'fav' ? 'all' : 'fav';
+            applyFilters();
+        }
+        favChip.addEventListener('click', toggleFavFilter);
+        showFavBtn.addEventListener('click', toggleFavFilter);
+        
+        // Filter chips
+        document.querySelectorAll('.chip[data-filter]').forEach(chip => {
+            chip.addEventListener('click', () => { 
+                if(chip.dataset.filter === 'all' && currentFilter === 'all') return;
+                currentFilter = chip.dataset.filter; 
+                applyFilters(); 
+            });
+        });
+        
+        // Popstate for back/forward
+        window.addEventListener('popstate', () => {
+            let params = new URLSearchParams(window.location.search);
+            let code = params.get('code');
+            if(code) openModalByCode(code);
+            else closeModal();
+        });
+        
+        // Escape key
+        document.addEventListener('keydown', (e) => {
+            if(e.key === 'Escape') closeModal();
+            if(e.key === '/' && document.activeElement !== searchInput) {
+                e.preventDefault();
+                searchInput.focus();
+            }
+        });
     }
     
+    // ==================== START ====================
     window.openModalByCode = openModalByCode;
     window.closeModal = closeModal;
     window.toggleFavorite = toggleFavorite;
