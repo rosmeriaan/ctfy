@@ -163,7 +163,7 @@
         .hero p {
             font-size: 1rem;
             color: var(--text-secondary);
-            max-width: 550px;
+            max-width: 600px;
             margin: 0 auto;
         }
         
@@ -477,7 +477,7 @@
             margin-bottom: var(--spacing-md);
         }
         
-        /* Modal - No Thumbnail */
+        /* Modal - No Icon */
         .modal {
             display: none;
             position: fixed;
@@ -498,12 +498,6 @@
             max-height: 85vh;
             overflow-y: auto;
             padding: var(--spacing-md);
-        }
-        
-        .modal-header-icon {
-            font-size: 3rem;
-            text-align: center;
-            margin-bottom: var(--spacing-md);
         }
         
         .modal-detail-row {
@@ -700,7 +694,7 @@
 
 <main>
     <div class="container">
-        <!-- Hero - satu paragraf -->
+        <!-- Hero -->
         <div class="hero">
             <h1>Asset Pilihan untuk Motion Designer Indonesia</h1>
             <p>Preset, Template &amp; Asset yang Dipakai Kreator Nyata — Temukan preset atau asset yang kau cari</p>
@@ -720,14 +714,14 @@
             </div>
         </div>
         
-        <!-- Stats - Hanya Download -->
+        <!-- Stats -->
         <div class="stats-bar">
             <div class="stat-item"><i class="fas fa-layer-group"></i> <span class="num" id="statAssets">0</span> asset</div>
             <div class="stat-item"><i class="fas fa-tag"></i> <span class="num" id="statCategories">0</span> kategori</div>
             <div class="stat-item"><i class="fas fa-download"></i> <span class="num" id="statDownloads">0</span> total downloads <span class="sync-status" id="syncStatus">● connecting...</span></div>
         </div>
         
-        <!-- Featured Section - Terbaru (Tanpa Thumbnail) -->
+        <!-- Featured Section - Terbaru -->
         <div class="featured-section" id="featuredSection">
             <div class="section-header">
                 <div class="section-title"><i class="fas fa-sparkles"></i> Terbaru</div>
@@ -769,7 +763,6 @@
             <h3 id="modalTitle" style="font-size: 1.2rem; font-weight: 600;"></h3>
             <button onclick="closeModal()" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text);">&times;</button>
         </div>
-        <div class="modal-header-icon">📦</div>
         <div id="modalTags" style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px;"></div>
         <div id="modalDetails"></div>
         <div id="modalLinks" class="modal-links"></div>
@@ -818,7 +811,7 @@
     
     // ==================== CONFIG ====================
     const API_URL = 'https://script.google.com/macros/s/AKfycbxGBXI-W9rj6PzpeoSf_84HBq4CQnXwD9CoynIoRIfD9RWWyfArU7qf9R8yl4DTOchs/exec';
-    const CACHE_KEY = 'ctfy_v85_data';
+    const CACHE_KEY = 'ctfy_v86_data';
     const FAVORITES_KEY = 'ctfy_favorites';
     const DOWNLOADS_KEY = 'ctfy_downloads';
     
@@ -843,6 +836,16 @@
     }
     function getDownloads(id) { let d = JSON.parse(localStorage.getItem(DOWNLOADS_KEY) || '{}'); return d[id] || 0; }
     function showToast(msg) { const t = document.querySelector('.toast'); if(t) t.remove(); const toast = document.createElement('div'); toast.className = 'toast'; toast.innerHTML = msg; document.body.appendChild(toast); setTimeout(() => toast.remove(), 2500); }
+    
+    // Format date from sheet
+    function formatDate(dateStr) {
+        if(!dateStr) return '-';
+        try {
+            let d = new Date(dateStr);
+            if(isNaN(d.getTime())) return dateStr;
+            return d.toLocaleDateString('id', { day: 'numeric', month: 'short', year: 'numeric' });
+        } catch(e) { return dateStr; }
+    }
     
     // Tags
     const TAG_MAP = {
@@ -966,7 +969,8 @@
                 <div class="tags">${getTags(item).map(t => `<span class="tag">#${t}</span>`).join('')}</div>
                 <div class="card-meta">
                     <span class="download-count">⬇️ ${getDownloads(item.Kode)} downloads</span>
-                    <span>${item.FileSize || '~12 MB'}</span>
+                    <span>${item.FileSize || '-'}</span>
+                    <span>${formatDate(item.DateAdded)}</span>
                 </div>
             </div>
         `).join('');
@@ -1031,9 +1035,9 @@
         document.getElementById('modalDetails').innerHTML = `
             <div class="modal-detail-row"><span>Kategori</span><span>${escapeHTML(item.Kategori || 'Umum')}</span></div>
             <div class="modal-detail-row"><span>Tipe</span><span>${isProItem(item) ? '⭐ Pro (Premium)' : '🎁 Gratis'}</span></div>
-            <div class="modal-detail-row"><span>Ukuran</span><span>${item.FileSize || '12 MB'}</span></div>
+            <div class="modal-detail-row"><span>Ukuran</span><span>${item.FileSize || '-'}</span></div>
             <div class="modal-detail-row"><span>Downloads</span><span>⬇️ ${getDownloads(item.Kode)}</span></div>
-            <div class="modal-detail-row"><span>Update</span><span>${item.DateAdded ? new Date(item.DateAdded).toLocaleDateString('id') : '-'}</span></div>
+            <div class="modal-detail-row"><span>Tanggal</span><span>${formatDate(item.DateAdded)}</span></div>
         `;
         
         let links = [];
