@@ -90,7 +90,6 @@
             padding: 0 var(--spacing-md);
         }
         
-        /* Header */
         .header {
             position: sticky;
             top: 0;
@@ -142,7 +141,6 @@
             color: var(--primary);
         }
         
-        /* Hero */
         .hero {
             text-align: center;
             padding: var(--spacing-xl) 0 var(--spacing-lg);
@@ -165,7 +163,6 @@
             margin: 0 auto;
         }
         
-        /* Search Panel */
         .search-panel {
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -224,7 +221,6 @@
             color: white;
         }
         
-        /* Stats - Total & Filter */
         .stats-bar {
             display: flex;
             gap: var(--spacing-md);
@@ -255,36 +251,13 @@
         .sync-status.offline { color: var(--warning); }
         .sync-status.local { color: var(--text-secondary); }
         
-        /* Debug Bar - Hidden in Production */
-        .debug-bar {
-            display: none;
-            font-size: 0.7rem;
-            color: var(--text-secondary);
-            padding: 8px 16px;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            margin-bottom: var(--spacing-md);
-            font-family: monospace;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-        .debug-bar.show { display: flex; }
-        .debug-bar .ok { color: var(--success); }
-        .debug-bar .err { color: var(--error); }
-        
-        /* Featured Section - Terbaru (5 items) */
-        .featured-section {
-            margin-bottom: var(--spacing-lg);
-        }
-        
+        .featured-section { margin-bottom: var(--spacing-lg); }
         .section-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
             margin-bottom: var(--spacing-md);
         }
-        
         .section-title {
             font-size: 1.2rem;
             font-weight: 600;
@@ -292,31 +265,19 @@
             align-items: center;
             gap: 8px;
         }
-        
-        .section-title i {
-            color: var(--primary);
-            font-size: 1rem;
-        }
-        
-        .section-link {
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-            cursor: pointer;
-        }
-        
+        .section-title i { color: var(--primary); font-size: 1rem; }
+        .section-link { font-size: 0.75rem; color: var(--text-secondary); cursor: pointer; }
         .scroll-container {
             overflow-x: auto;
             scrollbar-width: thin;
             padding-bottom: var(--spacing-xs);
             scroll-snap-type: x mandatory;
         }
-        
         .card-row {
             display: flex;
             gap: var(--spacing-md);
             min-width: min-content;
         }
-        
         .featured-card {
             flex: 0 0 180px;
             background: var(--bg-card);
@@ -327,52 +288,18 @@
             transition: all 0.2s;
             scroll-snap-align: start;
         }
+        .featured-card:hover { transform: translateY(-3px); border-color: var(--primary); }
+        .featured-card .featured-code { font-size: 0.55rem; color: var(--text-secondary); font-family: monospace; margin-bottom: 4px; }
+        .featured-title { font-weight: 600; font-size: 0.85rem; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .featured-meta { font-size: 0.65rem; color: var(--text-secondary); display: flex; gap: 8px; flex-wrap: wrap; }
+        .trending-badge { font-size: 0.55rem; background: var(--warning); color: #000; padding: 1px 6px; border-radius: 100px; }
         
-        .featured-card:hover {
-            transform: translateY(-3px);
-            border-color: var(--primary);
-        }
-        
-        .featured-card .featured-code {
-            font-size: 0.55rem;
-            color: var(--text-secondary);
-            font-family: monospace;
-            margin-bottom: 4px;
-        }
-        
-        .featured-title {
-            font-weight: 600;
-            font-size: 0.85rem;
-            margin-bottom: 4px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        
-        .featured-meta {
-            font-size: 0.65rem;
-            color: var(--text-secondary);
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-        
-        .trending-badge {
-            font-size: 0.55rem;
-            background: var(--warning);
-            color: #000;
-            padding: 1px 6px;
-            border-radius: 100px;
-        }
-        
-        /* Grid */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: var(--spacing-md);
             margin-bottom: var(--spacing-xl);
         }
-        
         .card {
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -381,25 +308,14 @@
             cursor: pointer;
             transition: all 0.2s;
         }
-        
-        .card:hover {
-            transform: translateY(-3px);
-            border-color: var(--primary);
-        }
-        
+        .card:hover { transform: translateY(-3px); border-color: var(--primary); }
         .card-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 4px;
         }
-        
-        .card-code {
-            font-size: 0.55rem;
-            color: var(--text-secondary);
-            font-family: monospace;
-        }
-        
+        .card-code { font-size: 0.55rem; color: var(--text-secondary); font-family: monospace; }
         .card-badge {
             font-size: 0.65rem;
             padding: 2px 8px;
@@ -407,139 +323,49 @@
             background: rgba(99,102,241,0.15);
             color: var(--primary);
         }
+        .card-badge.pro { background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(99,102,241,0.1)); border: 1px solid rgba(139,92,246,0.4); color: #c4b5fd; }
+        .card-badge.free { background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.3); color: var(--success); }
+        .card-badge.paid { background: rgba(239,68,68,0.15); border: 1px solid rgba(239,68,68,0.4); color: var(--error); }
+        .card-badge.trending { background: rgba(245,158,11,0.15); border: 1px solid rgba(245,158,11,0.3); color: var(--warning); }
         
-        .card-badge.pro {
-            background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(99,102,241,0.1));
-            border: 1px solid rgba(139,92,246,0.4);
-            color: #c4b5fd;
+        .inline-icon {
+            font-size: 0.9em;
+            width: auto;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 4px;
         }
         
-        .card-badge.free {
-            background: rgba(16,185,129,0.1);
-            border: 1px solid rgba(16,185,129,0.3);
-            color: var(--success);
-        }
-        
-        .card-badge.trending {
-            background: rgba(245,158,11,0.15);
-            border: 1px solid rgba(245,158,11,0.3);
-            color: var(--warning);
-        }
-        
-        .favorite-btn {
-            background: none;
-            border: none;
-            color: var(--text-secondary);
-            cursor: pointer;
-            font-size: 0.9rem;
-            padding: 4px;
-        }
-        
-        .favorite-btn.active {
-            color: #fbbf24;
-        }
-        
-        .card-title {
-            font-weight: 600;
-            font-size: 0.95rem;
-            margin-bottom: 4px;
-            line-height: 1.4;
-        }
-        
-        .card-category {
-            font-size: 0.7rem;
-            color: var(--text-secondary);
-            margin-bottom: 8px;
-        }
-        
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
+        .card-meta span, .featured-meta span, .toast {
+            display: inline-flex;
+            align-items: center;
             gap: 4px;
-            margin-bottom: 10px;
         }
+        .favorite-btn { background: none; border: none; color: var(--text-secondary); cursor: pointer; font-size: 0.9rem; padding: 4px; }
+        .favorite-btn.active { color: #fbbf24; }
+        .card-title { font-weight: 600; font-size: 0.95rem; margin-bottom: 4px; line-height: 1.4; }
+        .card-category { font-size: 0.7rem; color: var(--text-secondary); margin-bottom: 8px; }
+        .tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
+        .tag { font-size: 0.6rem; padding: 2px 6px; background: rgba(99,102,241,0.1); border-radius: 100px; color: var(--text-secondary); }
+        .card-meta { display: flex; gap: 12px; font-size: 0.65rem; color: var(--text-secondary); padding-top: 10px; border-top: 1px solid var(--border); flex-wrap: wrap; }
+        .card-meta .download-count { color: var(--success); }
+        .copy-code-btn { background: none; border: none; color: var(--text-secondary); cursor: pointer; font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; transition: all 0.2s; }
+        .copy-code-btn:hover { background: var(--primary); color: white; }
         
-        .tag {
-            font-size: 0.6rem;
-            padding: 2px 6px;
-            background: rgba(99,102,241,0.1);
-            border-radius: 100px;
-            color: var(--text-secondary);
-        }
-        
-        .card-meta {
-            display: flex;
-            gap: 12px;
-            font-size: 0.65rem;
-            color: var(--text-secondary);
-            padding-top: 10px;
-            border-top: 1px solid var(--border);
-            flex-wrap: wrap;
-        }
-        
-        .card-meta .download-count {
-            color: var(--success);
-        }
-        
-        .copy-code-btn {
-            background: none;
-            border: none;
-            color: var(--text-secondary);
-            cursor: pointer;
-            font-size: 0.7rem;
-            padding: 2px 6px;
-            border-radius: 4px;
-            transition: all 0.2s;
-        }
-        
-        .copy-code-btn:hover {
-            background: var(--primary);
-            color: white;
-        }
-        
-        /* Shimmer */
         .shimmer {
-            background: linear-gradient(90deg, 
-                var(--bg-hover) 25%, 
-                var(--border) 50%, 
-                var(--bg-hover) 75%
-            );
+            background: linear-gradient(90deg, var(--bg-hover) 25%, var(--border) 50%, var(--bg-hover) 75%);
             background-size: 200% 100%;
             animation: shimmer 1.5s infinite;
             border-radius: 16px;
             height: 180px;
         }
+        @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
         
-        @keyframes shimmer {
-            0% { background-position: 200% 0; }
-            100% { background-position: -200% 0; }
-        }
+        .empty-state { text-align: center; padding: var(--spacing-xl) var(--spacing-md); }
+        .empty-state i { font-size: 2.5rem; color: var(--text-secondary); opacity: 0.5; margin-bottom: var(--spacing-sm); }
+        .empty-state h3 { font-size: 1.1rem; margin-bottom: var(--spacing-xs); }
+        .empty-state p { font-size: 0.8rem; color: var(--text-secondary); margin-bottom: var(--spacing-md); }
         
-        /* Empty State */
-        .empty-state {
-            text-align: center;
-            padding: var(--spacing-xl) var(--spacing-md);
-        }
-        
-        .empty-state i {
-            font-size: 2.5rem;
-            color: var(--text-secondary);
-            opacity: 0.5;
-            margin-bottom: var(--spacing-sm);
-        }
-        
-        .empty-state h3 {
-            font-size: 1.1rem;
-            margin-bottom: var(--spacing-xs);
-        }
-        
-        .empty-state p {
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            margin-bottom: var(--spacing-md);
-        }
-        
-        /* Modal */
         .modal {
             display: none;
             position: fixed;
@@ -551,194 +377,41 @@
             z-index: 1000;
             padding: var(--spacing-md);
         }
+        .modal-content { background: var(--bg-card); border-radius: 20px; max-width: 480px; width: 100%; max-height: 85vh; overflow-y: auto; padding: var(--spacing-md); }
+        .modal-code { font-size: 0.7rem; color: var(--text-secondary); font-family: monospace; margin-bottom: 4px; }
+        .modal-detail-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 0.8rem; }
+        .modal-links { margin: var(--spacing-md) 0; }
+        .modal-link { display: block; padding: 10px; background: rgba(99,102,241,0.1); border-radius: 10px; margin-bottom: 8px; text-decoration: none; color: var(--primary); text-align: center; font-size: 0.85rem; transition: background 0.2s; }
+        .modal-link:hover { background: rgba(99,102,241,0.2); }
+        .modal-link.order-wa { background: rgba(16,185,129,0.1); color: var(--success); }
+        .modal-link.order-wa:hover { background: rgba(16,185,129,0.2); }
+        .ad-button { background: linear-gradient(135deg, #8b5cf6, #6366f1); border: none; color: white; padding: 12px; border-radius: 10px; font-weight: 600; cursor: pointer; text-align: center; display: block; width: 100%; margin-bottom: 8px; transition: opacity 0.2s; }
+        .ad-button:hover { opacity: 0.9; }
+        .share-buttons { display: flex; gap: 10px; }
+        .share-btn { flex: 1; padding: 10px; background: var(--bg-hover); border: 1px solid var(--border); border-radius: 10px; cursor: pointer; text-align: center; font-size: 0.8rem; color: var(--text); transition: all 0.2s; }
+        .share-btn:hover { background: var(--primary); border-color: var(--primary); color: white; }
         
-        .modal-content {
-            background: var(--bg-card);
-            border-radius: 20px;
-            max-width: 480px;
-            width: 100%;
-            max-height: 85vh;
-            overflow-y: auto;
-            padding: var(--spacing-md);
-        }
+        .footer { text-align: center; padding: var(--spacing-lg) var(--spacing-md); border-top: 1px solid var(--border); color: var(--text-secondary); font-size: 0.75rem; }
+        .footer-brand { font-size: 1.2rem; font-weight: 700; background: linear-gradient(135deg, var(--primary), var(--primary-light)); background-clip: text; -webkit-background-clip: text; color: transparent; margin-bottom: 4px; }
+        .footer-tagline { font-size: 0.7rem; color: var(--text-secondary); margin-bottom: var(--spacing-md); }
+        .footer-social { display: flex; justify-content: center; gap: var(--spacing-md); margin-bottom: var(--spacing-sm); }
+        .footer-social a { color: var(--text-secondary); font-size: 1.3rem; transition: color 0.2s; text-decoration: none; }
+        .footer-social a:hover { color: var(--primary); }
+        .footer-links { display: flex; justify-content: center; gap: var(--spacing-md); margin-bottom: var(--spacing-sm); flex-wrap: wrap; }
+        .footer-links a { color: var(--text-secondary); text-decoration: none; transition: color 0.2s; font-size: 0.75rem; }
+        .footer-links a:hover { color: var(--primary); }
+        .footer-copy { font-size: 0.65rem; opacity: 0.5; }
         
-        .modal-code {
-            font-size: 0.7rem;
-            color: var(--text-secondary);
-            font-family: monospace;
-            margin-bottom: 4px;
-        }
+        .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: var(--bg-card); border: 1px solid var(--primary); border-radius: 100px; padding: 8px 20px; z-index: 1100; font-size: 0.8rem; animation: fadeInUp 0.2s ease; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateX(-50%) translateY(20px); } to { opacity: 1; transform: translateX(-50%) translateY(0); } }
         
-        .modal-detail-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 8px 0;
-            border-bottom: 1px solid var(--border);
-            font-size: 0.8rem;
-        }
-        
-        .modal-links {
-            margin: var(--spacing-md) 0;
-        }
-        
-        .modal-link {
-            display: block;
-            padding: 10px;
-            background: rgba(99,102,241,0.1);
-            border-radius: 10px;
-            margin-bottom: 8px;
-            text-decoration: none;
-            color: var(--primary);
-            text-align: center;
-            font-size: 0.85rem;
-            transition: background 0.2s;
-        }
-        
-        .modal-link:hover {
-            background: rgba(99,102,241,0.2);
-        }
-        
-        .share-buttons {
-            display: flex;
-            gap: 10px;
-        }
-        
-        .share-btn {
-            flex: 1;
-            padding: 10px;
-            background: var(--bg-hover);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            cursor: pointer;
-            text-align: center;
-            font-size: 0.8rem;
-            color: var(--text);
-            transition: all 0.2s;
-        }
-        
-        .share-btn:hover {
-            background: var(--primary);
-            border-color: var(--primary);
-            color: white;
-        }
-        
-        /* Footer */
-        .footer {
-            text-align: center;
-            padding: var(--spacing-lg) var(--spacing-md);
-            border-top: 1px solid var(--border);
-            color: var(--text-secondary);
-            font-size: 0.75rem;
-        }
-        
-        .footer-brand {
-            font-size: 1.2rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            margin-bottom: 4px;
-        }
-        
-        .footer-tagline {
-            font-size: 0.7rem;
-            color: var(--text-secondary);
-            margin-bottom: var(--spacing-md);
-        }
-        
-        .footer-social {
-            display: flex;
-            justify-content: center;
-            gap: var(--spacing-md);
-            margin-bottom: var(--spacing-sm);
-        }
-        
-        .footer-social a {
-            color: var(--text-secondary);
-            font-size: 1.3rem;
-            transition: color 0.2s;
-            text-decoration: none;
-        }
-        
-        .footer-social a:hover {
-            color: var(--primary);
-        }
-        
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: var(--spacing-md);
-            margin-bottom: var(--spacing-sm);
-            flex-wrap: wrap;
-        }
-        
-        .footer-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: color 0.2s;
-            font-size: 0.75rem;
-        }
-        
-        .footer-links a:hover {
-            color: var(--primary);
-        }
-        
-        .footer-copy {
-            font-size: 0.65rem;
-            opacity: 0.5;
-        }
-        
-        /* Toast */
-        .toast {
-            position: fixed;
-            bottom: 24px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--bg-card);
-            border: 1px solid var(--primary);
-            border-radius: 100px;
-            padding: 8px 20px;
-            z-index: 1100;
-            font-size: 0.8rem;
-            animation: fadeInUp 0.2s ease;
-        }
-        
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateX(-50%) translateY(20px); }
-            to { opacity: 1; transform: translateX(-50%) translateY(0); }
-        }
-        
-        /* Responsive */
         @media (max-width: 768px) {
-            :root {
-                --spacing-lg: 32px;
-                --spacing-xl: 40px;
-            }
-            
             .hero h1 { font-size: 1.6rem; }
-            .hero p { font-size: 0.85rem; }
             .search-panel { border-radius: 20px; flex-direction: column; align-items: stretch; padding: 12px; }
             .search-icon { display: none; }
             .filter-divider { display: none; }
-            .chips-wrapper { justify-content: center; padding-right: 0; }
-            .grid { grid-template-columns: 1fr; gap: 12px; }
-            .stats-bar { flex-wrap: wrap; gap: 12px; }
-            .logo svg { height: 28px; }
+            .grid { grid-template-columns: 1fr; }
             .featured-card { flex: 0 0 160px; }
-        }
-        
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        
-        button:focus-visible, a:focus-visible {
-            outline: 2px solid var(--primary);
-            outline-offset: 2px;
-        }
-        
-        @media (prefers-reduced-motion: reduce) {
-            * { animation: none !important; transition: none !important; }
         }
     </style>
 </head>
@@ -749,7 +422,7 @@
         <div class="header-inner">
             <a class="logo" href="/">
                 <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200" preserveAspectRatio="xMidYMid meet">
-                    <g transform="translate(0.000000,200.000000) scale(0.100000,-0.100000)" fill="currentColor" stroke="none">
+                    <g transform="translate(0.000000,200.000000) scale(0.100000,-0.100000)" fill="#ffffff" stroke="none">
                         <path d="M1 1823 l0 -178 20 62 c23 74 67 134 134 185 91 69 116 73 420 73 260 0 272 -1 328 -23 81 -33 166 -114 203 -194 l29 -63 3 -287 3 -288 -160 0 -159 0 -4 193 c-3 216 -10 242 -84 307 -51 44 -93 60 -161 60 -100 -1 -175 -46 -219 -132 l-24 -47 0 -493 c0 -476 1 -493 21 -534 74 -153 275 -186 396 -65 61 61 68 87 71 299 l4 192 159 0 160 0 -3 -293 -3 -292 -29 -60 c-38 -76 -105 -143 -181 -181 l-60 -29 -290 0 -290 0 -60 28 c-103 48 -190 151 -214 254 -6 27 -9 -13 -10 -139 l-1 -178 2500 0 2500 0 -1 553 c0 303 -4 541 -8 527 -14 -45 -39 -84 -73 -116 -60 -57 -92 -68 -215 -72 l-113 -4 0 -429 0 -429 -160 0 -160 0 0 429 0 429 -112 4 c-125 4 -168 19 -227 79 -68 67 -66 54 -69 489 l-3 396 23 33 c39 58 72 76 137 76 48 0 64 -5 96 -29 61 -47 65 -67 65 -319 0 -265 7 -302 74 -371 98 -100 254 -98 353 6 57 59 61 82 64 328 1 123 6 242 11 264 11 51 60 103 109 118 74 22 158 -15 189 -85 l20 -42 0 83 0 82 -2500 0 -2500 0 1 -177z m1639 -148 l0 -295 405 0 405 0 0 -135 0 -135 -405 0 -405 0 0 -302 c0 -341 2 -351 80 -422 130 -117 337 -62 396 106 10 29 14 89 14 219 l0 179 161 0 160 0 -3 -307 -3 -308 -28 -53 c-37 -70 -97 -128 -166 -161 l-56 -26 -315 0 -315 0 -49 25 c-77 39 -132 94 -168 168 l-33 67 -3 837 -3 838 166 0 165 0 0 -295z m1798 277 c118 -37 197 -116 234 -234 14 -46 18 -92 18 -199 l0 -139 -164 0 -164 0 -4 64 c-8 126 -98 216 -223 224 -78 5 -120 -8 -174 -54 -76 -65 -85 -96 -89 -281 l-4 -163 411 0 411 0 0 -140 0 -140 -410 0 -410 0 0 -430 0 -430 -160 0 -160 0 0 830 c0 812 0 830 21 884 24 66 96 149 153 178 84 43 110 47 388 47 232 1 274 -1 326 -17z"/>
                     </g>
                 </svg>
@@ -764,13 +437,11 @@
 
 <main>
     <div class="container">
-        <!-- Hero -->
         <div class="hero">
             <h1>Asset Pilihan untuk Motion Designer Indonesia</h1>
             <p>Preset, Template &amp; Asset yang Dipakai Kreator Nyata — Temukan preset atau asset yang kau cari</p>
         </div>
         
-        <!-- Search Panel -->
         <div class="search-panel">
             <i class="fas fa-search search-icon"></i>
             <input type="text" id="searchInput" class="search-input" placeholder="Cari preset, template, atau asset...">
@@ -779,12 +450,12 @@
                 <button class="chip active" data-filter="all">Semua</button>
                 <button class="chip" data-filter="free">Gratis</button>
                 <button class="chip" data-filter="pro">Pro</button>
+                <button class="chip" data-filter="paid">Paid</button>
                 <button class="chip" data-filter="new">Baru</button>
                 <button class="chip fav-chip" id="favFilterChip"><i class="far fa-star"></i> Favorit</button>
             </div>
         </div>
         
-        <!-- Stats -->
         <div class="stats-bar">
             <div class="stat-item"><i class="fas fa-layer-group"></i> <span class="num" id="statTotal">0</span> total asset</div>
             <div class="stat-item"><i class="fas fa-search"></i> <span class="num" id="statFiltered">0</span> hasil filter</div>
@@ -792,16 +463,6 @@
             <div class="stat-item"><i class="fas fa-download"></i> <span class="num" id="statDownloads">0</span> total downloads <span class="sync-status" id="syncStatus">● connecting...</span></div>
         </div>
         
-        <!-- Debug Bar - Hidden in Production -->
-        <div class="debug-bar" id="debugBar">
-            <span>🔍 Debug:</span>
-            <span id="debugStatus">Loading data...</span>
-            <span id="debugCount"></span>
-            <span id="debugSample"></span>
-            <span id="debugMode"></span>
-        </div>
-        
-        <!-- Featured Section - Terbaru (5 items) -->
         <div class="featured-section" id="featuredSection">
             <div class="section-header">
                 <div class="section-title"><i class="fas fa-sparkles"></i> Terbaru</div>
@@ -812,7 +473,6 @@
             </div>
         </div>
         
-        <!-- Main Grid -->
         <div class="section-header">
             <div class="section-title"><i class="fas fa-grid-2"></i> Semua Asset</div>
             <span class="section-link" id="resetFiltersBtn">Reset filter</span>
@@ -855,7 +515,6 @@
 </div>
 
 <script>
-    // ==================== FIREBASE CONFIG ====================
     const firebaseConfig = {
         apiKey: "AIzaSyATWmme05sKVI2qCPWvdVP5NFHIQ64eJ-o",
         authDomain: "pusat-link-cattfly.firebaseapp.com",
@@ -867,6 +526,9 @@
         measurementId: "G-15SJYB7TNN"
     };
     
+    const WA_NUMBER = '6285745535579';
+    const ORDER_EMAIL = 'myxrin2748@gmail.com';
+    
     let db = null;
     let firebaseInitialized = false;
     let downloadSession = new Set();
@@ -876,553 +538,144 @@
     let currentFilter = 'all';
     let fuseInstance = null;
     let searchTimer = null;
-    let pendingCodeFromURL = null;
     
     try {
-        const app = firebase.initializeApp(firebaseConfig);
+        firebase.initializeApp(firebaseConfig);
         db = firebase.firestore();
         firebaseInitialized = true;
-        console.log('🔥 Firebase connected');
         updateSyncStatus('● live', 'online');
     } catch(e) {
-        console.warn('⚠️ Firebase not available:', e);
         updateSyncStatus('● local', 'local');
         isOffline = true;
     }
     
     function updateSyncStatus(text, type = 'online') {
         const el = document.getElementById('syncStatus');
-        if(el) { 
-            el.textContent = text; 
-            el.className = 'sync-status ' + type;
-        }
+        if(el) { el.textContent = text; el.className = 'sync-status ' + type; }
     }
     
-    // ==================== CONFIG ====================
     const API_URL = 'https://script.google.com/macros/s/AKfycbxGBXI-W9rj6PzpeoSf_84HBq4CQnXwD9CoynIoRIfD9RWWyfArU7qf9R8yl4DTOchs/exec';
-    const CACHE_KEY = 'ctfy_v88_data';
+    const CACHE_KEY = 'ctfy_v90_data';
     const FAVORITES_KEY = 'ctfy_favorites';
     const DOWNLOADS_KEY = 'ctfy_downloads';
     
-    // ==================== HELPERS ====================
     function escapeHTML(str) { if(!str) return ''; return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
-    function isProItem(item) { return (item.Kategori || '').toLowerCase().includes('pro') || (item.Nama || '').toLowerCase().includes('pro'); }
-    function isNewItem(dateStr) { 
-        if(!dateStr) return false; 
-        try {
-            let d = new Date(dateStr);
-            if(isNaN(d.getTime())) return false;
-            const weekAgo = new Date(); 
-            weekAgo.setDate(weekAgo.getDate() - 7); 
-            return d > weekAgo;
-        } catch(e) { return false; }
-    }
-    function getDownloads(id) { 
-        let d = JSON.parse(localStorage.getItem(DOWNLOADS_KEY) || '{}'); 
-        return d[id] || 0; 
-    }
-    function showToast(msg) { 
-        const t = document.querySelector('.toast'); if(t) t.remove(); 
-        const toast = document.createElement('div'); toast.className = 'toast'; 
-        toast.innerHTML = msg; 
-        document.body.appendChild(toast); 
-        setTimeout(() => toast.remove(), 2500); 
-    }
+    function isPaidItem(item) { return (item.Harga || '').toString().toLowerCase().trim() === 'paid'; }
+    function isProItem(item) { if (isPaidItem(item)) return false; return (item.Kategori || '').toLowerCase().includes('pro'); }
+    function getItemType(item) { if (isPaidItem(item)) return 'paid'; if (isProItem(item)) return 'pro'; return 'free'; }
+    function isNewItem(dateStr) { if(!dateStr) return false; try { let d = new Date(dateStr); if(isNaN(d.getTime())) return false; const weekAgo = new Date(); weekAgo.setDate(weekAgo.getDate() - 7); return d > weekAgo; } catch(e) { return false; } }
+    function getDownloads(id) { let d = JSON.parse(localStorage.getItem(DOWNLOADS_KEY) || '{}'); return d[id] || 0; }
+    function showToast(msg) { const t = document.querySelector('.toast'); if(t) t.remove(); const toast = document.createElement('div'); toast.className = 'toast'; toast.innerHTML = msg; document.body.appendChild(toast); setTimeout(() => toast.remove(), 2500); }
+    function formatDate(dateStr) { if(!dateStr) return '-'; try { let d = new Date(dateStr); if(isNaN(d.getTime())) return dateStr; return d.toLocaleDateString('id', { day: 'numeric', month: 'short', year: 'numeric' }); } catch(e) { return dateStr; } }
+    function getTrending(id) { return getDownloads(id) > 50; }
+    function copyCode(code) { navigator.clipboard.writeText(code).then(() => showToast('📋 Kode ' + code + ' disalin!')); }
     
-    function formatDate(dateStr) {
-        if(!dateStr) return '-';
-        try {
-            let d = new Date(dateStr);
-            if(isNaN(d.getTime())) return dateStr;
-            return d.toLocaleDateString('id', { day: 'numeric', month: 'short', year: 'numeric' });
-        } catch(e) { return dateStr; }
-    }
+    const TAG_MAP = { 'Motion Graphic': ['motion', 'animation', 'after effects'], 'Template': ['template', 'premiere pro'], 'Sound Effect': ['sfx', 'audio'], 'Transition': ['transition', 'glitch', 'cinematic'], 'Logo': ['logo', 'reveal', 'intro'] };
+    function getTags(item) { let tags = []; const kategori = item.Kategori || ''; const nama = (item.Nama || '').toLowerCase(); for(let [cat, catTags] of Object.entries(TAG_MAP)) { if(kategori.includes(cat) || nama.includes(cat.toLowerCase())) tags.push(...catTags); } if(nama.includes('gaming')) tags.push('gaming'); if(nama.includes('velocity')) tags.push('velocity'); return [...new Set(tags)].slice(0, 4); }
     
-    function getTrending(id) {
-        return getDownloads(id) > 50;
-    }
+    async function incrementDownloadFirebase(id) { if(!firebaseInitialized || !db || isOffline) return false; try { await db.collection('assets').doc(id).update({ downloads: firebase.firestore.FieldValue.increment(1), lastDownload: new Date().toISOString() }); return true; } catch(e) { try { await db.collection('assets').doc(id).set({ downloads: 1, lastDownload: new Date().toISOString() }, { merge: true }); return true; } catch(e2) { return false; } } }
     
-    function copyCode(code) {
-        navigator.clipboard.writeText(code).then(() => showToast('📋 Kode ' + code + ' disalin!'));
-    }
+    async function loadFirebaseDownloads() { if(!firebaseInitialized || !db || isOffline) return; try { const snapshot = await db.collection('assets').get(); let downloads = JSON.parse(localStorage.getItem(DOWNLOADS_KEY) || '{}'); let changed = false; snapshot.forEach(doc => { const data = doc.data(); if(data.downloads !== undefined) { downloads[doc.id] = data.downloads; changed = true; } }); if(changed) localStorage.setItem(DOWNLOADS_KEY, JSON.stringify(downloads)); updateSyncStatus('● live', 'online'); isOffline = false; } catch(e) { updateSyncStatus('● offline', 'offline'); isOffline = true; } }
     
-    // Tags
-    const TAG_MAP = {
-        'Motion Graphic': ['motion', 'animation', 'after effects'],
-        'Template': ['template', 'premiere pro'],
-        'Sound Effect': ['sfx', 'audio'],
-        'Transition': ['transition', 'glitch', 'cinematic'],
-        'Logo': ['logo', 'reveal', 'intro']
-    };
-    
-    function getTags(item) {
-        let tags = [];
-        const kategori = item.Kategori || '';
-        const nama = (item.Nama || '').toLowerCase();
-        for(let [cat, catTags] of Object.entries(TAG_MAP)) {
-            if(kategori.includes(cat) || nama.includes(cat.toLowerCase())) tags.push(...catTags);
-        }
-        if(nama.includes('gaming')) tags.push('gaming');
-        if(nama.includes('velocity')) tags.push('velocity');
-        return [...new Set(tags)].slice(0, 4);
-    }
-    
-    // ==================== FIREBASE DOWNLOAD COUNTER ====================
-    async function incrementDownloadFirebase(id) {
-        if(!firebaseInitialized || !db || isOffline) return false;
-        try {
-            await db.collection('assets').doc(id).update({
-                downloads: firebase.firestore.FieldValue.increment(1),
-                lastDownload: new Date().toISOString()
-            });
-            return true;
-        } catch(e) {
-            // If document doesn't exist, create it
-            try {
-                await db.collection('assets').doc(id).set({
-                    downloads: 1,
-                    lastDownload: new Date().toISOString()
-                }, { merge: true });
-                return true;
-            } catch(e2) {
-                console.warn('Firebase increment failed:', e2);
-                return false;
-            }
-        }
-    }
-    
-    async function loadFirebaseDownloads() {
-        if(!firebaseInitialized || !db || isOffline) return;
-        try {
-            const snapshot = await db.collection('assets').get();
-            let downloads = JSON.parse(localStorage.getItem(DOWNLOADS_KEY) || '{}');
-            let changed = false;
-            
-            snapshot.forEach(doc => {
-                const data = doc.data();
-                if(data.downloads !== undefined) {
-                    downloads[doc.id] = data.downloads;
-                    changed = true;
-                }
-            });
-            
-            if(changed) {
-                localStorage.setItem(DOWNLOADS_KEY, JSON.stringify(downloads));
-            }
-            updateSyncStatus('● live', 'online');
-            isOffline = false;
-        } catch(e) {
-            console.warn('Failed to load Firebase downloads:', e);
-            updateSyncStatus('● offline', 'offline');
-            isOffline = true;
-        }
-    }
-    
-    // ==================== FAVORITES ====================
     function loadFavorites() { try { const s = localStorage.getItem(FAVORITES_KEY); if(s) favorites = new Set(JSON.parse(s)); } catch(e) {} renderAll(); updateFavUI(); }
     function saveFavorites() { localStorage.setItem(FAVORITES_KEY, JSON.stringify([...favorites])); }
     function toggleFavorite(id, e) { e.stopPropagation(); favorites.has(id) ? favorites.delete(id) : favorites.add(id); saveFavorites(); renderAll(); showToast(favorites.has(id) ? '❤️ Ditambahkan ke favorit' : '💔 Dihapus dari favorit'); }
     function isFavorite(id) { return favorites.has(id); }
     function updateFavUI() { const btn = document.getElementById('showFavOnlyBtn'); if(btn) btn.style.color = currentFilter === 'fav' ? 'var(--primary)' : 'var(--text-secondary)'; }
     
-    // ==================== SEARCH ====================
     function initFuse() { fuseInstance = new Fuse(allItems, { keys: ['Nama', 'Kategori', 'Kode'], threshold: 0.3, ignoreLocation: true }); }
+    function searchAssets(query) { if(!query || query.length < 2) return allItems; let results = fuseInstance ? fuseInstance.search(query).map(r => r.item) : []; const synonyms = { 'transisi': 'transition', 'intro': 'opener', 'gaming': 'game' }; const expanded = synonyms[query.toLowerCase()] || query; if(results.length < 5 && expanded !== query) { let extra = fuseInstance ? fuseInstance.search(expanded).map(r => r.item) : []; results = [...new Map([...results, ...extra].map(i => [i.Kode, i])).values()]; } return results.length ? results : allItems; }
     
-    function searchAssets(query) {
-        if(!query || query.length < 2) return allItems;
-        let results = fuseInstance ? fuseInstance.search(query).map(r => r.item) : [];
-        let synonyms = { 'transisi': 'transition', 'intro': 'opener', 'gaming': 'game' };
-        let expanded = synonyms[query.toLowerCase()] || query;
-        if(results.length < 5 && expanded !== query) {
-            let extra = fuseInstance ? fuseInstance.search(expanded).map(r => r.item) : [];
-            results = [...new Map([...results, ...extra].map(i => [i.Kode, i])).values()];
-        }
-        return results.length ? results : allItems;
-    }
+    function renderFeatured() { let featured = [...allItems]; featured.sort((a,b) => new Date(b.Tanggal || 0) - new Date(a.Tanggal || 0)); featured = featured.slice(0, 5); document.getElementById('featuredRow').innerHTML = featured.map(item => { const tipe = getItemType(item); const badgeText = tipe === 'paid' ? 'Paid' : (tipe === 'pro' ? '⭐ Pro' : 'Gratis'); return `<div class="featured-card" onclick="openModalByCode('${escapeHTML(item.Kode)}')"><div class="featured-code">${escapeHTML(item.Kode || '')}</div><div class="featured-title">${escapeHTML(item.Nama || 'Untitled')}</div><div class="featured-meta"><span>${badgeText}</span><span><i class="fas fa-download inline-icon"></i> ${getDownloads(item.Kode)}</span>${getTrending(item.Kode) ? '<span class="trending-badge">🔥 Trending</span>' : ''}</div></div>`; }).join(''); }
     
-    // ==================== RENDER ====================
-    function renderFeatured() {
-        let featured = [...allItems];
-        featured.sort((a,b) => {
-            if(a.Tanggal && b.Tanggal) {
-                return new Date(b.Tanggal) - new Date(a.Tanggal);
-            }
-            return 0;
-        });
-        featured = featured.slice(0, 5);
+    function renderGrid(items) { const grid = document.getElementById('cardGrid'); if(!items.length) { grid.innerHTML = `<div class="empty-state"><i class="fas fa-search"></i><h3>Tidak ada asset ditemukan</h3><p>Coba kata kunci lain atau reset filter</p><button class="chip" onclick="resetFilters()">Reset filter</button></div>`; return; } grid.innerHTML = items.map(item => { const tipe = getItemType(item); let badges = []; if (tipe === 'paid') badges.push('paid'); else if (tipe === 'pro') badges.push('pro'); else badges.push('free'); if(getTrending(item.Kode)) badges.push('trending'); const badgeHTML = badges.map(b => { let text = b === 'paid' ? 'Paid' : (b === 'pro' ? '⭐ Pro' : (b === 'free' ? 'Gratis' : '🔥 Trending')); return `<span class="card-badge ${b}">${text}</span>`; }).join(''); return `<div class="card" onclick="openModalByCode('${escapeHTML(item.Kode)}')"><div class="card-header"><span class="card-code">${escapeHTML(item.Kode || '')}</span><div style="display:flex;gap:4px;align-items:center;">${badgeHTML}<button class="favorite-btn ${isFavorite(item.Kode) ? 'active' : ''}" onclick="event.stopPropagation();toggleFavorite('${escapeHTML(item.Kode)}',event)"><i class="${isFavorite(item.Kode) ? 'fas' : 'far'} fa-star"></i></button></div></div><div class="card-title">${escapeHTML(item.Nama || 'Untitled')}</div><div class="card-category">${escapeHTML(item.Kategori || 'Umum')}</div><div class="tags">${getTags(item).map(t => `<span class="tag">#${t}</span>`).join('')}</div><div class="card-meta"><span class="download-count"><i class="fas fa-download inline-icon"></i> ${getDownloads(item.Kode)} downloads</span><span><i class="far fa-calendar-alt inline-icon"></i> ${formatDate(item.Tanggal)}</span><button class="copy-code-btn" onclick="event.stopPropagation();copyCode('${escapeHTML(item.Kode)}')"><i class="fas fa-copy"></i> ${escapeHTML(item.Kode)}</button></div></div>`; }).join(''); }
+    
+    function applyFilters() { const query = document.getElementById('searchInput').value; let filtered = searchAssets(query); if(currentFilter === 'free') filtered = filtered.filter(i => getItemType(i) === 'free'); else if(currentFilter === 'pro') filtered = filtered.filter(i => getItemType(i) === 'pro'); else if(currentFilter === 'paid') filtered = filtered.filter(i => getItemType(i) === 'paid'); else if(currentFilter === 'new') filtered = filtered.filter(i => isNewItem(i.Tanggal)); else if(currentFilter === 'fav') filtered = filtered.filter(i => isFavorite(i.Kode)); renderGrid(filtered); document.getElementById('statFiltered').innerText = filtered.length; document.getElementById('statTotal').innerText = allItems.length; updateActiveChip(); }
+    function updateActiveChip() { document.querySelectorAll('.chip[data-filter]').forEach(chip => { chip.classList.toggle('active', chip.dataset.filter === currentFilter); }); document.getElementById('favFilterChip')?.classList.toggle('active', currentFilter === 'fav'); updateFavUI(); }
+    function renderAll() { applyFilters(); renderFeatured(); updateStats(); }
+    function updateStats() { const cats = new Set(allItems.map(i => i.Kategori || 'Umum')); const totalDownloads = Object.values(JSON.parse(localStorage.getItem(DOWNLOADS_KEY) || '{}')).reduce((a,b) => a + b, 0); document.getElementById('statCategories').innerText = cats.size; document.getElementById('statDownloads').innerText = totalDownloads.toLocaleString(); }
+    function resetFilters() { currentFilter = 'all'; document.getElementById('searchInput').value = ''; applyFilters(); showToast('Filter direset'); }
+    
+    function renderModalLinks(item) {
+        const container = document.getElementById('modalLinks');
+        if (!item) return;
+        const tipe = getItemType(item);
         
-        document.getElementById('featuredRow').innerHTML = featured.map(item => `
-            <div class="featured-card" onclick="openModalByCode('${escapeHTML(item.Kode)}')">
-                <div class="featured-code">${escapeHTML(item.Kode || '')}</div>
-                <div class="featured-title">${escapeHTML(item.Nama || 'Untitled')}</div>
-                <div class="featured-meta">
-                    <span>${isProItem(item) ? '⭐ Pro' : '🎁 Gratis'}</span>
-                    <span>⬇️ ${getDownloads(item.Kode)}</span>
-                    ${getTrending(item.Kode) ? '<span class="trending-badge">🔥 Trending</span>' : ''}
-                </div>
-            </div>
-        `).join('');
-    }
-    
-    function renderGrid(items) {
-        const grid = document.getElementById('cardGrid');
-        if(!items.length) {
-            grid.innerHTML = `<div class="empty-state"><i class="fas fa-search"></i><h3>Tidak ada asset ditemukan</h3><p>Coba kata kunci lain atau reset filter</p><div class="chips-wrapper" style="justify-content:center"><button class="chip" onclick="resetFilters()">Reset filter</button></div></div>`;
+        if (tipe === 'paid') {
+            const message = `Halo, saya mau order ${item.Kode} - ${item.Nama}`;
+            const waLink = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
+            const emailSubject = `Order ${item.Kode}`;
+            const emailBody = `Halo, saya mau order asset berikut:%0D%0A%0D%0AKode: ${item.Kode}%0D%0ANama: ${item.Nama}%0D%0AKategori: ${item.Kategori || 'Umum'}%0D%0A%0D%0AMohon info lebih lanjut. Terima kasih.`;
+            const emailLink = `mailto:${ORDER_EMAIL}?subject=${encodeURIComponent(emailSubject)}&body=${emailBody}`;
+            container.innerHTML = `
+                <a href="${waLink}" target="_blank" rel="noopener noreferrer" class="modal-link order-wa"><i class="fab fa-whatsapp"></i> Order via WhatsApp</a>
+                <a href="${emailLink}" target="_blank" rel="noopener noreferrer" class="modal-link" style="background: rgba(99,102,241,0.1); color: var(--primary);"><i class="far fa-envelope"></i> Order via Email</a>
+            `;
             return;
         }
-        grid.innerHTML = items.map(item => {
-            let badges = [];
-            if(isProItem(item)) badges.push('pro');
-            else badges.push('free');
-            if(getTrending(item.Kode)) badges.push('trending');
-            
-            return `
-            <div class="card" onclick="openModalByCode('${escapeHTML(item.Kode)}')">
-                <div class="card-header">
-                    <span class="card-code">${escapeHTML(item.Kode || '')}</span>
-                    <div style="display:flex;gap:4px;align-items:center;">
-                        ${badges.map(b => `<span class="card-badge ${b}">${b === 'pro' ? '⭐ Pro' : b === 'free' ? '🎁 Gratis' : '🔥 Trending'}</span>`).join('')}
-                        <button class="favorite-btn ${isFavorite(item.Kode) ? 'active' : ''}" onclick="event.stopPropagation();toggleFavorite('${escapeHTML(item.Kode)}',event)"><i class="${isFavorite(item.Kode) ? 'fas' : 'far'} fa-star"></i></button>
+        
+        if (tipe === 'pro') {
+            const adVerified = sessionStorage.getItem('ad_done_' + item.Kode) === 'true';
+            if (adVerified) {
+                let links = [];
+                if(item.LinkDrive && item.LinkDrive !== '#') links.push({ label: '<i class="fas fa-download inline-icon"></i> Link Drive', url: item.LinkDrive });
+                if(item.LinkAsset && item.LinkAsset !== '#') links.push({ label: '<i class="fas fa-download inline-icon"></i> Link Asset', url: item.LinkAsset });
+                if(item.LinkTiktok && item.LinkTiktok !== '#') links.push({ label: '<i class="fab fa-tiktok inline-icon"></i> TikTok', url: item.LinkTiktok });
+                container.innerHTML = links.length ? 
+                    links.map(l => `<a href="${l.url}" target="_blank" rel="noopener noreferrer" class="modal-link" onclick="trackDownload('${escapeHTML(item.Kode)}')">${l.label}</a>`).join('') :
+                    '<div style="text-align:center;padding:20px;">Link akan segera tersedia</div>';
+            } else {
+                const adLink = (item.Link5MB && item.Link5MB !== '#') ? item.Link5MB : '#';
+                container.innerHTML = `
+                    <div style="text-align:center; margin-bottom: 12px; color: var(--text-secondary); font-size:0.8rem;">
+                        <i class="fas fa-lock"></i> Asset Pro: Anda harus melalui link iklan terlebih dahulu.
                     </div>
-                </div>
-                <div class="card-title">${escapeHTML(item.Nama || 'Untitled')}</div>
-                <div class="card-category">${escapeHTML(item.Kategori || 'Umum')}</div>
-                <div class="tags">${getTags(item).map(t => `<span class="tag">#${t}</span>`).join('')}</div>
-                <div class="card-meta">
-                    <span class="download-count">⬇️ ${getDownloads(item.Kode)} downloads</span>
-                    <span>📅 ${formatDate(item.Tanggal)}</span>
-                    <button class="copy-code-btn" onclick="event.stopPropagation();copyCode('${escapeHTML(item.Kode)}')"><i class="fas fa-copy"></i> ${escapeHTML(item.Kode)}</button>
-                </div>
-            </div>
-        `}).join('');
-    }
-    
-    function applyFilters() {
-        let query = document.getElementById('searchInput').value;
-        let filtered = searchAssets(query);
-        
-        if(currentFilter === 'free') filtered = filtered.filter(i => !isProItem(i));
-        else if(currentFilter === 'pro') filtered = filtered.filter(i => isProItem(i));
-        else if(currentFilter === 'new') filtered = filtered.filter(i => isNewItem(i.Tanggal));
-        else if(currentFilter === 'fav') filtered = filtered.filter(i => isFavorite(i.Kode));
-        
-        renderGrid(filtered);
-        document.getElementById('statFiltered').innerText = filtered.length;
-        document.getElementById('statTotal').innerText = allItems.length;
-        updateActiveChip();
-    }
-    
-    function updateActiveChip() {
-        document.querySelectorAll('.chip[data-filter]').forEach(chip => {
-            if(chip.dataset.filter === currentFilter) chip.classList.add('active');
-            else chip.classList.remove('active');
-        });
-        const favChip = document.getElementById('favFilterChip');
-        if(favChip) {
-            if(currentFilter === 'fav') favChip.classList.add('active');
-            else favChip.classList.remove('active');
+                    <button class="ad-button" onclick="handleAdClick('${escapeHTML(item.Kode)}', '${escapeHTML(adLink)}')">
+                        🔗 Buka Link Iklan
+                    </button>
+                `;
+            }
+            return;
         }
-        updateFavUI();
-    }
-    
-    function renderAll() {
-        applyFilters();
-        renderFeatured();
-        updateStats();
-    }
-    
-    function updateStats() {
-        let cats = new Set(allItems.map(i => i.Kategori || 'Umum'));
-        let totalDownloads = Object.values(JSON.parse(localStorage.getItem(DOWNLOADS_KEY) || '{}')).reduce((a,b) => a + b, 0);
-        document.getElementById('statCategories').innerText = cats.size;
-        document.getElementById('statDownloads').innerText = totalDownloads.toLocaleString();
-    }
-    
-    function resetFilters() {
-        currentFilter = 'all';
-        document.getElementById('searchInput').value = '';
-        applyFilters();
-        showToast('Filter direset');
-    }
-    
-    // ==================== MODAL ====================
-    function openModal(item) {
-        if(!item) return;
-        currentItem = item;
         
-        document.getElementById('modalTitle').innerText = item.Nama || 'Detail Asset';
-        document.getElementById('modalCode').innerHTML = '📋 ' + escapeHTML(item.Kode || '') + ' <button class="copy-code-btn" onclick="copyCode(\'' + escapeHTML(item.Kode) + '\')" style="font-size:0.7rem;">copy</button>';
-        
-        document.getElementById('modalTags').innerHTML = getTags(item).map(t => `<span class="tag">#${t}</span>`).join('');
-        document.getElementById('modalDetails').innerHTML = `
-            <div class="modal-detail-row"><span>Kategori</span><span>${escapeHTML(item.Kategori || 'Umum')}</span></div>
-            <div class="modal-detail-row"><span>Tipe</span><span>${isProItem(item) ? '⭐ Pro (Premium)' : '🎁 Gratis'}</span></div>
-            <div class="modal-detail-row"><span>Downloads</span><span>⬇️ ${getDownloads(item.Kode)}</span></div>
-            <div class="modal-detail-row"><span>Tanggal</span><span>${formatDate(item.Tanggal)}</span></div>
-        `;
-        
+        // Free
         let links = [];
-        if(item.Link5MB && item.Link5MB !== '#') links.push({ label: '📦 Download 5MB', url: item.Link5MB });
-        if(item.LinkDrive && item.LinkDrive !== '#') links.push({ label: '📁 Download Drive', url: item.LinkDrive });
-        if(item.LinkAsset && item.LinkAsset !== '#') links.push({ label: '📎 Link Asset', url: item.LinkAsset });
-        if(item.LinkTiktok && item.LinkTiktok !== '#') links.push({ label: '🎵 TikTok', url: item.LinkTiktok });
-        
-        document.getElementById('modalLinks').innerHTML = links.length ? 
-            links.map(l => `<a href="${l.url}" target="_blank" rel="noopener noreferrer" class="modal-link" onclick="trackDownload('${escapeHTML(item.Kode)}')">${l.label}</a>`).join('') : 
+        if(item.Link5MB && item.Link5MB !== '#') links.push({ label: '<i class="fas fa-download inline-icon"></i> Link 5MB', url: item.Link5MB });
+        if(item.LinkDrive && item.LinkDrive !== '#') links.push({ label: '<i class="fas fa-download inline-icon"></i> Link Drive', url: item.LinkDrive });
+        if(item.LinkAsset && item.LinkAsset !== '#') links.push({ label: '<i class="fas fa-download inline-icon"></i> Link Asset', url: item.LinkAsset });
+        if(item.LinkTiktok && item.LinkTiktok !== '#') links.push({ label: '<i class="fab fa-tiktok inline-icon"></i> TikTok', url: item.LinkTiktok });
+        container.innerHTML = links.length ? 
+            links.map(l => `<a href="${l.url}" target="_blank" rel="noopener noreferrer" class="modal-link" onclick="trackDownload('${escapeHTML(item.Kode)}')">${l.label}</a>`).join('') :
             '<div style="text-align:center;padding:20px;">Link akan segera tersedia</div>';
-        
-        document.getElementById('modal').style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-        
-        let url = new URL(window.location);
-        url.searchParams.set('code', item.Kode);
-        window.history.replaceState({}, '', url);
-        
-        renderFeatured();
-        updateStats();
     }
     
-    function openModalByCode(code) { 
-        if(!code || !allItems.length) return;
-        let item = allItems.find(i => String(i.Kode).toLowerCase() === String(code).toLowerCase()); 
-        if(item) openModal(item); 
-        else showToast('Asset tidak ditemukan');
-    }
-    
-    function openAssetFromURL() {
-        const params = new URLSearchParams(window.location.search);
-        const code = params.get('code');
-        if(code && allItems.length) {
-            openModalByCode(code);
+    function handleAdClick(code, adLink) {
+        if (adLink && adLink !== '#') {
+            window.open(adLink, '_blank');
         }
+        sessionStorage.setItem('ad_done_' + code, 'true');
+        if (currentItem && currentItem.Kode === code) renderModalLinks(currentItem);
     }
     
-    function closeModal() { 
-        document.getElementById('modal').style.display = 'none'; 
-        document.body.style.overflow = ''; 
-        let url = new URL(window.location);
-        url.searchParams.delete('code');
-        window.history.replaceState({}, '', url);
-    }
+    function openModal(item) { if(!item) return; currentItem = item; document.getElementById('modalTitle').innerText = item.Nama || 'Detail Asset'; document.getElementById('modalCode').innerHTML = '📋 ' + escapeHTML(item.Kode || '') + ' <button class="copy-code-btn" onclick="copyCode(\'' + escapeHTML(item.Kode) + '\')" style="font-size:0.7rem;">copy</button>'; document.getElementById('modalTags').innerHTML = getTags(item).map(t => `<span class="tag">#${t}</span>`).join(''); document.getElementById('modalDetails').innerHTML = `<div class="modal-detail-row"><span>Kategori</span><span>${escapeHTML(item.Kategori || 'Umum')}</span></div><div class="modal-detail-row"><span>Tipe</span><span>${getItemType(item) === 'paid' ? '🔒 Paid' : (getItemType(item) === 'pro' ? '⭐ Pro (Iklan)' : 'Gratis')}</span></div><div class="modal-detail-row"><span>Downloads</span><span><i class="fas fa-download inline-icon"></i> ${getDownloads(item.Kode)}</span></div><div class="modal-detail-row"><span>Tanggal</span><span><i class="far fa-calendar-alt inline-icon"></i> ${formatDate(item.Tanggal)}</span></div>`; renderModalLinks(item); document.getElementById('modal').style.display = 'flex'; document.body.style.overflow = 'hidden'; const url = new URL(window.location); url.searchParams.set('code', item.Kode); window.history.replaceState({}, '', url); renderFeatured(); updateStats(); }
+    function openModalByCode(code) { if(!code || !allItems.length) return; const item = allItems.find(i => String(i.Kode).toLowerCase() === String(code).toLowerCase()); if(item) openModal(item); else showToast('Asset tidak ditemukan'); }
+    function openAssetFromURL() { const params = new URLSearchParams(window.location.search); const code = params.get('code'); if(code && allItems.length) openModalByCode(code); }
+    function closeModal() { document.getElementById('modal').style.display = 'none'; document.body.style.overflow = ''; const url = new URL(window.location); url.searchParams.delete('code'); window.history.replaceState({}, '', url); }
+    document.getElementById('modal').addEventListener('click', function(e) { if(e.target === this) closeModal(); });
+    function copyAssetLink() { if(currentItem) { const url = `${window.location.origin}${window.location.pathname}?code=${currentItem.Kode}`; navigator.clipboard.writeText(url).then(() => showToast('📋 Link disalin!')); } }
+    function shareAsset() { if(currentItem && navigator.share) { navigator.share({ title: currentItem.Nama, url: `${window.location.origin}${window.location.pathname}?code=${currentItem.Kode}` }).catch(() => copyAssetLink()); } else copyAssetLink(); }
+    async function trackDownload(id) { const sessionKey = 'download_' + id; if(downloadSession.has(sessionKey)) return; downloadSession.add(sessionKey); await incrementDownloadFirebase(id); let downloads = JSON.parse(localStorage.getItem(DOWNLOADS_KEY) || '{}'); downloads[id] = (downloads[id] || 0) + 1; localStorage.setItem(DOWNLOADS_KEY, JSON.stringify(downloads)); renderAll(); showToast('⬇️ Download dicatat!'); }
     
-    document.getElementById('modal').addEventListener('click', function(e) {
-        if(e.target === this) closeModal();
-    });
+    function useCachedData() { const cached = localStorage.getItem(CACHE_KEY); if (!cached) return false; try { const { data } = JSON.parse(cached); if (data && data.length) { allItems = data; initFuse(); renderAll(); openAssetFromURL(); return true; } } catch(e) {} return false; }
     
-    function copyAssetLink() { 
-        if(currentItem) { 
-            let url = `${window.location.origin}${window.location.pathname}?code=${currentItem.Kode}`;
-            navigator.clipboard.writeText(url).then(() => showToast('📋 Link disalin!')).catch(() => {});
-        } 
-    }
+    async function fetchAndUpdate() { try { const controller = new AbortController(); const timeoutId = setTimeout(() => controller.abort(), 10000); const res = await fetch(API_URL, { signal: controller.signal }); clearTimeout(timeoutId); if (!res.ok) throw new Error('Status ' + res.status); const raw = await res.json(); if (Array.isArray(raw) && raw.length) { allItems = raw.filter(i => i && typeof i === 'object').reverse(); localStorage.setItem(CACHE_KEY, JSON.stringify({ data: allItems, timestamp: Date.now() })); isOffline = false; updateSyncStatus('● live', 'online'); initFuse(); renderAll(); openAssetFromURL(); showToast(`<i class="fas fa-check inline-icon"></i> ${allItems.length} asset dimuat`); } else { throw new Error('Data kosong'); } } catch(err) { console.warn('Gagal fetch API:', err.message); if (!allItems.length) { document.getElementById('cardGrid').innerHTML = `<div class="empty-state"><i class="fas fa-wifi"></i><h3>Gagal memuat data</h3><p>Server tidak merespons. Menggunakan cache jika tersedia.</p><button class="chip" onclick="loadData()">🔄 Coba Lagi</button></div>`; } updateSyncStatus('● offline', 'offline'); isOffline = true; } }
     
-    function shareAsset() { 
-        if(currentItem && navigator.share) {
-            navigator.share({ 
-                title: currentItem.Nama, 
-                url: `${window.location.origin}${window.location.pathname}?code=${currentItem.Kode}` 
-            }).catch(() => copyAssetLink()); 
-        } else copyAssetLink(); 
-    }
+    async function loadData() { if (isLoading) return; isLoading = true; const hasCache = useCachedData(); if (!hasCache) { document.getElementById('cardGrid').innerHTML = Array(8).fill('<div class="shimmer"></div>').join(''); } loadFirebaseDownloads(); await fetchAndUpdate(); isLoading = false; }
     
-    // ==================== TRACK DOWNLOAD ====================
-    async function trackDownload(id) {
-        const sessionKey = 'download_' + id;
-        if(downloadSession.has(sessionKey)) return;
-        downloadSession.add(sessionKey);
-        
-        // Increment Firebase first
-        const success = await incrementDownloadFirebase(id);
-        
-        // Update local storage
-        let downloads = JSON.parse(localStorage.getItem(DOWNLOADS_KEY) || '{}');
-        downloads[id] = (downloads[id] || 0) + 1;
-        localStorage.setItem(DOWNLOADS_KEY, JSON.stringify(downloads));
-        
-        renderAll();
-        showToast('⬇️ Download dicatat!');
-    }
+    function initTheme() { const saved = localStorage.getItem('ctfy_theme') || 'dark'; const icon = document.getElementById('themeToggle').querySelector('i'); if(saved === 'light') { document.documentElement.setAttribute('data-theme', 'light'); icon.className = 'fas fa-sun'; } else { icon.className = 'fas fa-moon'; } document.getElementById('themeToggle').addEventListener('click', () => { const cur = document.documentElement.getAttribute('data-theme'); const icon = document.getElementById('themeToggle').querySelector('i'); if(cur === 'light') { document.documentElement.removeAttribute('data-theme'); localStorage.setItem('ctfy_theme', 'dark'); icon.className = 'fas fa-moon'; } else { document.documentElement.setAttribute('data-theme', 'light'); localStorage.setItem('ctfy_theme', 'light'); icon.className = 'fas fa-sun'; } }); }
     
-    // ==================== LOAD DATA ====================
-    function showSkeleton() {
-        const grid = document.getElementById('cardGrid');
-        let skeletons = '';
-        for(let i = 0; i < 8; i++) {
-            skeletons += `<div class="shimmer"></div>`;
-        }
-        grid.innerHTML = skeletons;
-    }
+    function initEvents() { const searchInput = document.getElementById('searchInput'); searchInput.addEventListener('input', () => { clearTimeout(searchTimer); searchTimer = setTimeout(applyFilters, 250); }); document.getElementById('resetFiltersBtn').addEventListener('click', resetFilters); document.getElementById('refreshFeatured').addEventListener('click', () => { renderFeatured(); showToast('🔄 Terbaru diperbarui'); }); function toggleFavFilter() { currentFilter = currentFilter === 'fav' ? 'all' : 'fav'; applyFilters(); } document.getElementById('favFilterChip').addEventListener('click', toggleFavFilter); document.getElementById('showFavOnlyBtn').addEventListener('click', toggleFavFilter); document.querySelectorAll('.chip[data-filter]').forEach(chip => { chip.addEventListener('click', () => { if(chip.dataset.filter === currentFilter) return; currentFilter = chip.dataset.filter; applyFilters(); }); }); window.addEventListener('popstate', () => { const params = new URLSearchParams(window.location.search); const code = params.get('code'); code ? openModalByCode(code) : closeModal(); }); document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeModal(); if(e.key === '/' && document.activeElement !== searchInput) { e.preventDefault(); searchInput.focus(); } }); }
     
-    function updateDebug(status, count = 0, sample = '', mode = '') {
-        const bar = document.getElementById('debugBar');
-        // Only show in development
-        if(window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-            bar.classList.add('show');
-        }
-        document.getElementById('debugStatus').innerHTML = status;
-        document.getElementById('debugCount').innerHTML = count ? `📊 ${count} row` : '';
-        document.getElementById('debugSample').innerHTML = sample ? `📝 ${sample}` : '';
-        document.getElementById('debugMode').innerHTML = mode ? `📌 ${mode}` : '';
-    }
-    
-    async function loadData() {
-        if(isLoading) return;
-        isLoading = true;
-        showSkeleton();
-        updateDebug('⏳ Memuat data...');
-        
-        // Always try to load from Firebase first
-        await loadFirebaseDownloads();
-        
-        // Try to load from API (always fresh)
-        try {
-            let controller = new AbortController();
-            let timeoutId = setTimeout(() => controller.abort(), 10000);
-            let res = await fetch(API_URL, { signal: controller.signal });
-            clearTimeout(timeoutId);
-            let raw = await res.json();
-            
-            console.log('📊 Data dari API:', raw);
-            console.log('📊 Jumlah row:', raw.length);
-            
-            if(raw.length > 0) {
-                console.log('📋 Kolom:', Object.keys(raw[0]));
-            }
-            
-            allItems = Array.isArray(raw) ? raw.filter(i => i && typeof i === 'object').reverse() : [];
-            
-            // Update cache
-            localStorage.setItem(CACHE_KEY, JSON.stringify({ data: allItems, timestamp: Date.now() }));
-            
-            updateDebug('✅ Dari API (live)', allItems.length, allItems.length > 0 ? allItems[0].Nama : '', '🟢 Online');
-            isOffline = false;
-            
-        } catch(err) {
-            console.warn('⚠️ API gagal, coba cache:', err.message);
-            
-            // Fallback to cache if API fails
-            const cached = localStorage.getItem(CACHE_KEY);
-            if(cached) {
-                try {
-                    let { data } = JSON.parse(cached);
-                    if(data && data.length) {
-                        allItems = data;
-                        updateDebug('⚠️ Dari cache (offline)', allItems.length, allItems.length > 0 ? allItems[0].Nama : '', '🔴 Offline');
-                        isOffline = true;
-                        showToast('⚠️ Mode offline — menggunakan data cache');
-                    }
-                } catch(e) {
-                    allItems = [];
-                }
-            } else {
-                allItems = [];
-                updateDebug('❌ Gagal: ' + err.message);
-            }
-        }
-        
-        // If still no data, try cache one more time
-        if(!allItems.length) {
-            const cached = localStorage.getItem(CACHE_KEY);
-            if(cached) {
-                try {
-                    let { data } = JSON.parse(cached);
-                    if(data && data.length) {
-                        allItems = data;
-                        updateDebug('⚠️ Dari cache (fallback)', allItems.length, allItems.length > 0 ? allItems[0].Nama : '', '🔴 Offline');
-                        isOffline = true;
-                    }
-                } catch(e) {}
-            }
-        }
-        
-        initFuse();
-        renderAll();
-        
-        // Open asset from URL after data loaded
-        openAssetFromURL();
-        
-        if(allItems.length) {
-            showToast(`✅ ${allItems.length} asset dimuat` + (isOffline ? ' (offline)' : ''));
-        } else {
-            document.getElementById('cardGrid').innerHTML = `<div class="empty-state"><i class="fas fa-wifi"></i><h3>Gagal memuat data</h3><p>Periksa koneksi internetmu</p><button class="chip" onclick="loadData()">Coba lagi</button></div>`;
-        }
-        
-        isLoading = false;
-    }
-    
-    // ==================== THEME ====================
-    function initTheme() {
-        let saved = localStorage.getItem('ctfy_theme') || 'dark';
-        let icon = document.getElementById('themeToggle').querySelector('i');
-        if(saved === 'light') {
-            document.documentElement.setAttribute('data-theme', 'light');
-            icon.className = 'fas fa-sun';
-        } else {
-            icon.className = 'fas fa-moon';
-        }
-        document.getElementById('themeToggle').addEventListener('click', () => {
-            let cur = document.documentElement.getAttribute('data-theme');
-            let icon = document.getElementById('themeToggle').querySelector('i');
-            if(cur === 'light') {
-                document.documentElement.removeAttribute('data-theme');
-                localStorage.setItem('ctfy_theme', 'dark');
-                icon.className = 'fas fa-moon';
-            } else {
-                document.documentElement.setAttribute('data-theme', 'light');
-                localStorage.setItem('ctfy_theme', 'light');
-                icon.className = 'fas fa-sun';
-            }
-        });
-    }
-    
-    // ==================== INIT EVENTS ====================
-    function initEvents() {
-        const searchInput = document.getElementById('searchInput');
-        const resetBtn = document.getElementById('resetFiltersBtn');
-        const refreshBtn = document.getElementById('refreshFeatured');
-        const favChip = document.getElementById('favFilterChip');
-        const showFavBtn = document.getElementById('showFavOnlyBtn');
-        
-        searchInput.addEventListener('input', () => {
-            clearTimeout(searchTimer);
-            searchTimer = setTimeout(() => applyFilters(), 250);
-        });
-        
-        resetBtn.addEventListener('click', resetFilters);
-        refreshBtn.addEventListener('click', () => { renderFeatured(); showToast('🔄 Terbaru diperbarui'); });
-        
-        function toggleFavFilter() {
-            currentFilter = currentFilter === 'fav' ? 'all' : 'fav';
-            applyFilters();
-        }
-        favChip.addEventListener('click', toggleFavFilter);
-        showFavBtn.addEventListener('click', toggleFavFilter);
-        
-        document.querySelectorAll('.chip[data-filter]').forEach(chip => {
-            chip.addEventListener('click', () => { 
-                if(chip.dataset.filter === 'all' && currentFilter === 'all') return;
-                currentFilter = chip.dataset.filter; 
-                applyFilters(); 
-            });
-        });
-        
-        window.addEventListener('popstate', () => {
-            let params = new URLSearchParams(window.location.search);
-            let code = params.get('code');
-            if(code) openModalByCode(code);
-            else closeModal();
-        });
-        
-        document.addEventListener('keydown', (e) => {
-            if(e.key === 'Escape') closeModal();
-            if(e.key === '/' && document.activeElement !== searchInput) {
-                e.preventDefault();
-                searchInput.focus();
-            }
-        });
-    }
-    
-    // ==================== START ====================
     window.openModalByCode = openModalByCode;
     window.closeModal = closeModal;
     window.toggleFavorite = toggleFavorite;
@@ -1431,6 +684,8 @@
     window.resetFilters = resetFilters;
     window.trackDownload = trackDownload;
     window.copyCode = copyCode;
+    window.handleAdClick = handleAdClick;
+    window.loadData = loadData;
     
     initTheme();
     loadFavorites();
